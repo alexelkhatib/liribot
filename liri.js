@@ -41,3 +41,18 @@ function UserWorking (userAction, requestParameter){
 }
 
 // Music Response Function //
+function displaySpotifyResponse(requestParameter) {
+    // If there is no user input, the system defaults to 'Can't Say' the best song off of Travis Scott's Astroworld Album
+    if (requestParameter === undefined)
+    inputParameter = "Can't Say";
+}
+ spotify.search(
+        {
+            type: "track",
+            query: inputParameter
+        },
+        function (err, data) {
+            if (err) {
+                console.log("Error occurred: " + err);
+                return;
+            }
